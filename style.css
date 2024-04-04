@@ -1,0 +1,167 @@
+body {
+  background-image: url(./img/bgimg.png);
+  font-family: 'Hachi Maru Pop', cursive;
+  font-weight: 400;
+  font-style: normal;
+  background-repeat: no-repeat;
+}
+
+.todo-container {
+  display: grid;
+  place-items: center;
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 900px;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 10px;
+  box-shadow: #79c0d48c 0px 0px 10px;
+}
+.head-line {
+  display: flex;
+}
+h1 {
+  font-size: 68px;
+  text-align: center;
+  font-weight: 800;
+  color: hotpink;
+}
+img:not(img.image-3) {
+  display: inline-block;
+  object-fit: contain;
+  width: 70px;
+  height: auto;
+}
+.image-1 {
+  transform: rotateZ(-10deg);
+  margin-right: 5px;
+  margin-top: 20px;
+}
+.input-area {
+  display: flex;
+  line-height: 50px;
+  justify-content: center;
+  align-items: center;
+  top: 200px;
+  right: 20px;
+}
+
+.task-input {
+  width: 580px;
+  height: 50px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  font-size: 20px;
+}
+button {
+  box-sizing: content-box;
+  width: 100px;
+  height: 50px;
+  border-radius: 10px;
+  border: none; /* ボーダーを削除 */
+  font-size: 18px;
+  font-weight: 800;
+  font-family: 'Hachi Maru Pop', cursive;
+  color: rgb(69, 69, 72);
+  background-image: url(./img/無題57_20240404160107.png);
+  background-color: rgba(255, 255, 255, 0.8);
+  background-blend-mode: soft-light;
+  box-shadow: darkgrey 0px 0px 10px;
+  text-align: center;
+  line-height: 50px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-left: 5px;
+  text-decoration-line: none; /* ボタンに対して打ち消し線を無効化 */
+}
+
+ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  justify-content: space-around;
+}
+ul li {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 50px;
+  width: 300px;
+  line-height: 50px;
+  border-radius: 10px;
+  border: 1px solid rgba(118, 211, 220, 0.2);
+  box-shadow: 0px 0px 3px 0px rgb(118, 211, 220);
+  font-size: 20px;
+}
+input[type='checkbox'] {
+  display: flex;
+  width: 30px;
+  height: 30px;
+  margin-top: 10px;
+  align-items: center;
+  justify-content: center;
+  line-height: 50px;
+  outline: hotpink;
+  accent-color: hotpink;
+}
+button.task-button {
+  text-decoration: none;
+}
+input[type='text']:focus {
+  outline: none;
+  box-shadow: 0px 0px 3px 0px rgb(118, 211, 220);
+}
+span.task-text {
+  margin-left: 10px;
+  font-weight: 800;
+}
+
+.completed .task-text {
+  text-decoration: line-through;
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.pro {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-top: 10px;
+  line-height: 70px;
+}
+.pro .image-3 {
+  display: inline-block;
+  position: absolute;
+  width: 70px;
+  height: auto;
+  right: 150px;
+  margin-right: 18px;
+}
+.bar-content {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+.progress-bg {
+  width: 100%;
+  height: 20px;
+  background-color: #79c0d48c;
+  border-radius: 10px;
+  position: relative;
+}
+.progress-bg #progressBar {
+  width: 0%;
+  height: 20px;
+  background-color: rgb(230, 93, 214);
+  border-radius: 10px;
+  position: absolute;
+}
+#completionPercentage {
+  font-weight: 800;
+  color: palevioletred;
+}

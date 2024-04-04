@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="todo-container">
+      <div class="head-line">
+        <img src="./img/くま.png" alt="熊のイラスト" class="image-1" />
+        <h1>ToDoリスト</h1>
+        <img src="./img/はち.png" alt="ハチのイラスト" class="image-2" />
+      </div>
+      <div class="input-area">
+        <input
+          type="text"
+          id="taskInput"
+          class="task-input"
+          placeholder="新しいタスクを入力してください"
+        />
+        <button type="button" onclick="addTask()" class="add-task">追加</button>
+        <button onclick="deleteAllTasks()">オール削除</button>
+      </div>
+      <div class="pro">
+        <img
+          src="./img/Firefly ハチミツの容器　ツボ 8200.jpg"
+          alt="はちみつ"
+          class="image-3"
+        />
+        <div class="bar-content">
+          <div class="progress-bg">
+            <div id="progressBar"></div>
+          </div>
+          <div id="completionPercentage"></div>
+        </div>
+      </div>
+      <!-- ここに追加 -->
+      <ul id="taskList"></ul>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
