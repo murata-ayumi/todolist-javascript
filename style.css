@@ -226,6 +226,14 @@ ul li {
     font-size: 16px;
   }
 }
+@media screen and (max-width: 500px) {
+  ul li {
+    margin-top: 5px;
+  }
+  ul#taskList {
+    padding-left: 0;
+  }
+}
 input[type='checkbox'] {
   display: flex;
   width: 30px;
