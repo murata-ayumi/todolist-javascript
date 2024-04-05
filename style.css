@@ -4,6 +4,10 @@ body {
   font-weight: 400;
   font-style: normal;
   background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
 }
 
 .todo-container {
@@ -13,7 +17,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   width: 900px;
-  height: 100%;
+  height: auto;
   background-color: rgba(255, 255, 255, 0.6);
   border-radius: 10px;
   box-shadow: #79c0d48c 0px 0px 10px;
@@ -21,27 +25,27 @@ body {
 @media screen and (max-width: 920px) {
   .todo-container {
     width: 700px;
-    height: 100%;
+    height: auto;
   }
 }
 @media screen and (max-width: 768px) {
   .todo-container {
     width: 680px;
-    height: 100%;
+    height: auto;
     margin-top: 20px;
   }
 }
 @media screen and (max-width: 690px) {
   .todo-container {
     width: 500px;
-    height: 100%;
+    height: auto;
     margin-top: 10px;
   }
 }
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 500px) {
   .todo-container {
-    width: 350px;
-    height: 100%;
+    width: 320px;
+    height: auto;
   }
 }
 .head-line {
@@ -55,6 +59,8 @@ h1 {
   text-align: center;
   font-weight: 800;
   color: hotpink;
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
 @media screen and (max-width: 768px) {
   h1 {
@@ -140,7 +146,7 @@ img:not(img.image-3) {
     font-size: 20px;
   }
 }
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 500px) {
   .task-input {
     width: 300px;
     height: 30px;
@@ -258,7 +264,7 @@ span.task-text {
   color: rgba(0, 0, 0, 0.2);
 }
 
-.pro {
+.pro-temp {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -266,7 +272,8 @@ span.task-text {
   margin-top: 10px;
   line-height: 70px;
 }
-.pro .image-3 {
+
+.pro-temp .image-3 {
   display: inline-block;
   position: absolute;
   width: 70px;
@@ -274,18 +281,20 @@ span.task-text {
   right: 150px;
   margin-right: 18px;
 }
-.bar-content {
+
+.pro-temp .bar-content {
   margin-top: 10px;
   margin-left: 10px;
 }
-.progress-bg {
+
+.bar-content .progress-bg {
   width: 100%;
   height: 20px;
   background-color: #79c0d48c;
   border-radius: 10px;
   position: relative;
 }
-.progress-bg #progressBar {
+.bar-content .progress-bg #progressBar {
   width: 0%;
   height: 20px;
   background-color: rgb(230, 93, 214);
@@ -295,4 +304,21 @@ span.task-text {
 #completionPercentage {
   font-weight: 800;
   color: palevioletred;
+}
+@media screen and (max-width: 500px) {
+  .pro-temp {
+    flex-direction: column; /* 縦に並べる */
+    align-items: center; /* 中央揃え */
+  }
+
+  .pro-temp .image-3 {
+    position: static; /* 通常のフローに戻す */
+    margin-right: 0; /* マージンを削除 */
+    margin-top: 10px; /* 必要に応じて適切なマージンを指定 */
+  }
+
+  .pro-temp .bar-content {
+    margin-left: 0; /* マージンを削除 */
+    margin-top: 10px; /* 必要に応じて適切なマージンを指定 */
+  }
 }
