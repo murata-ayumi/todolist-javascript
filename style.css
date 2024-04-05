@@ -18,20 +18,71 @@ body {
   border-radius: 10px;
   box-shadow: #79c0d48c 0px 0px 10px;
 }
+@media screen and (max-width: 920px) {
+  .todo-container {
+    width: 700px;
+    height: 100%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .todo-container {
+    width: 680px;
+    height: 100%;
+    margin-top: 20px;
+  }
+}
+@media screen and (max-width: 690px) {
+  .todo-container {
+    width: 500px;
+    height: 100%;
+    margin-top: 10px;
+  }
+}
+@media screen and (max-width: 430px) {
+  .todo-container {
+    width: 350px;
+    height: 100%;
+  }
+}
 .head-line {
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 h1 {
   font-size: 68px;
   text-align: center;
   font-weight: 800;
   color: hotpink;
 }
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 48px;
+  }
+}
+@media screen and (max-width: 690px) {
+  h1 {
+    font-size: 36px;
+  }
+}
 img:not(img.image-3) {
   display: inline-block;
   object-fit: contain;
   width: 70px;
   height: auto;
+}
+@media screen and (max-width: 768px) {
+  img:not(img.image-3) {
+    width: 48px;
+    height: auto;
+  }
+}
+@media screen and (max-width: 690px) {
+  img:not(img.image-3) {
+    width: 36px;
+    height: auto;
+  }
 }
 .image-1 {
   transform: rotateZ(-10deg);
@@ -47,6 +98,26 @@ img:not(img.image-3) {
   right: 20px;
 }
 
+@media screen and (max-width: 920px) {
+  .input-area {
+    display: grid;
+    grid-template-areas:
+      'task task'
+      'button1 button2';
+  }
+  .task-input {
+    grid-area: task;
+  }
+  .add-task {
+    grid-area: button1;
+    justify-self: end;
+  }
+  .reset-task {
+    grid-area: button2;
+    margin-left: 5px;
+  }
+}
+
 .task-input {
   width: 580px;
   height: 50px;
@@ -56,6 +127,27 @@ img:not(img.image-3) {
   margin-bottom: 10px;
   padding-left: 10px;
   font-size: 20px;
+}
+@media screen and (max-width: 690px) {
+  .task-input {
+    width: 400px;
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 430px) {
+  .task-input {
+    width: 300px;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
 }
 button {
   box-sizing: content-box;
@@ -79,12 +171,31 @@ button {
   margin-left: 5px;
   text-decoration-line: none; /* ボタンに対して打ち消し線を無効化 */
 }
-
+@media screen and (max-width: 690px) {
+  button {
+    width: 80px;
+    height: 40px;
+    border-radius: 5px;
+    border: none; /* ボーダーを削除 */
+    font-size: 12px;
+    line-height: 40px;
+    font-weight: 800;
+    font-family: 'Hachi Maru Pop', cursive;
+    color: rgb(69, 69, 72);
+  }
+}
 ul {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
   justify-content: space-around;
+}
+@media screen and (max-width: 690px) {
+  ul {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    place-items: center;
+  }
 }
 ul li {
   list-style-type: none;
@@ -100,6 +211,15 @@ ul li {
   box-shadow: 0px 0px 3px 0px rgb(118, 211, 220);
   font-size: 20px;
 }
+@media screen and (max-width: 690px) {
+  ul li {
+    width: 250px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+}
 input[type='checkbox'] {
   display: flex;
   width: 30px;
@@ -110,6 +230,16 @@ input[type='checkbox'] {
   line-height: 50px;
   outline: hotpink;
   accent-color: hotpink;
+}
+@media screen and (max-width: 690px) {
+  input[type='checkbox'] {
+    width: 20px;
+    height: 20px;
+    margin-top: 10px;
+    align-items: center;
+    justify-content: center;
+    line-height: 40px;
+  }
 }
 button.task-button {
   text-decoration: none;
@@ -131,6 +261,7 @@ span.task-text {
 .pro {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   position: relative;
   margin-top: 10px;
   line-height: 70px;
