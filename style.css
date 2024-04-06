@@ -155,7 +155,7 @@ img:not(img.image-3) {
     margin-bottom: 15px;
   }
 }
-button {
+button:not(button.task-button) {
   box-sizing: content-box;
   width: 100px;
   height: 50px;
@@ -178,7 +178,7 @@ button {
   text-decoration-line: none; /* ボタンに対して打ち消し線を無効化 */
 }
 @media screen and (max-width: 690px) {
-  button {
+  button:not(button.task-button) {
     width: 80px;
     height: 40px;
     border-radius: 5px;
@@ -190,10 +190,40 @@ button {
     color: rgb(69, 69, 72);
   }
 }
+button.task-button {
+  box-sizing: content-box;
+  background-image: url(./img/無題57_20240404160107.png);
+  width: 80px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  background-blend-mode: soft-light;
+  box-shadow: darkgrey 0px 0px 10px;
+  margin-top: 4px;
+  cursor: pointer;
+  text-align: center;
+  border: none;
+  font-size: 16px;
+  line-height: 40px;
+  font-weight: 800;
+  font-family: 'Hachi Maru Pop', cursive;
+}
+@media screen and (max-width: 690px) {
+  button.task-button {
+    width: 60px;
+    height: 30px;
+    border-radius: 3px;
+    border: none; /* ボーダーを削除 */
+    font-size: 12px;
+    line-height: 30px;
+    font-weight: 800;
+    font-family: 'Hachi Maru Pop', cursive;
+    color: rgb(69, 69, 72);
+  }
+}
 ul {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
   justify-content: space-around;
 }
 @media screen and (max-width: 690px) {
@@ -206,11 +236,10 @@ ul {
 ul li {
   list-style-type: none;
   display: flex;
-  justify-content: space-between;
+  width: fit-content;
   margin-top: 10px;
   margin-bottom: 10px;
   height: 50px;
-  width: 300px;
   line-height: 50px;
   border-radius: 10px;
   border: 1px solid rgba(118, 211, 220, 0.2);
@@ -219,7 +248,7 @@ ul li {
 }
 @media screen and (max-width: 690px) {
   ul li {
-    width: 250px;
+    width: fit-content;
     height: 40px;
     line-height: 40px;
     border-radius: 5px;
@@ -231,14 +260,19 @@ ul li {
     margin-top: 5px;
   }
   ul#taskList {
-    padding-left: 0;
+    padding-left: 0px;
   }
+}
+ul#taskList {
+  padding-inline-start: 0px;
 }
 input[type='checkbox'] {
   display: flex;
   width: 30px;
   height: 30px;
   margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
   align-items: center;
   justify-content: center;
   line-height: 50px;
@@ -250,13 +284,28 @@ input[type='checkbox'] {
     width: 20px;
     height: 20px;
     margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
     align-items: center;
     justify-content: center;
     line-height: 40px;
   }
 }
+@media screen and (max-width: 500px) {
+  input[type='checkbox'] {
+    width: 15px;
+    height: 15px;
+    margin-top: 14px;
+    margin-left: 10px;
+    margin-right: 10px;
+    align-items: center;
+    justify-content: center;
+    line-height: 15px;
+  }
+}
 button.task-button {
   text-decoration: none;
+  inset: 0;
 }
 input[type='text']:focus {
   outline: none;
@@ -278,7 +327,7 @@ span.task-text {
   align-items: center;
   position: relative;
   margin-top: 10px;
-  line-height: 70px;
+  line-height: 40px;
 }
 
 .pro-temp .image-3 {
@@ -286,8 +335,7 @@ span.task-text {
   position: absolute;
   width: 70px;
   height: auto;
-  right: 150px;
-  margin-right: 18px;
+  right: 115px;
 }
 
 .pro-temp .bar-content {
@@ -312,21 +360,4 @@ span.task-text {
 #completionPercentage {
   font-weight: 800;
   color: palevioletred;
-}
-@media screen and (max-width: 500px) {
-  .pro-temp {
-    flex-direction: column; /* 縦に並べる */
-    align-items: center; /* 中央揃え */
-  }
-
-  .pro-temp .image-3 {
-    position: static; /* 通常のフローに戻す */
-    margin-right: 0; /* マージンを削除 */
-    margin-top: 10px; /* 必要に応じて適切なマージンを指定 */
-  }
-
-  .pro-temp .bar-content {
-    margin-left: 0; /* マージンを削除 */
-    margin-top: 10px; /* 必要に応じて適切なマージンを指定 */
-  }
 }
