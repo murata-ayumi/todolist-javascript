@@ -224,7 +224,7 @@ button.task-button {
 ul {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  justify-content: space-around;
+  column-gap: 20px;
 }
 @media screen and (max-width: 690px) {
   ul {
@@ -244,7 +244,7 @@ ul li {
   border-radius: 10px;
   border: 1px solid rgba(118, 211, 220, 0.2);
   box-shadow: 0px 0px 3px 0px rgb(118, 211, 220);
-  font-size: 20px;
+  font-size: 18px;
 }
 @media screen and (max-width: 690px) {
   ul li {
@@ -313,7 +313,13 @@ input[type='text']:focus {
 }
 span.task-text {
   margin-left: 10px;
-  font-weight: 800;
+  font-weight: 600;
+  overflow-wrap: normal;
+}
+@media screen and (max-width: 920px) {
+  span.task-text {
+    font-size: 14px;
+  }
 }
 
 .completed .task-text {
